@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html ng-app id="ng-app">
+  <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+      <script src="js/services.js"></script>
+      <script src="js/submitform.js"></script>
+ 
+
+      
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular-resource.js"></script>
+      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script type="text/javascript" src="js/restangular.js"></script>
+    
+    <meta charset="utf-8">
+    <title>Create Session</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+   <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements 
+    			- updated in Bootstrap 2.02 to include the http: -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="file:///Macintosh HD/Users/kisho/Downloads/My-Bootstrap-Site-NAVBAR/images/favicon.ico">
+    <link rel="apple-touch-icon" href="file:///Macintosh HD/Users/kisho/Downloads/My-Bootstrap-Site-NAVBAR/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="file:///Macintosh HD/Users/kisho/Downloads/My-Bootstrap-Site-NAVBAR/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="file:///Macintosh HD/Users/kisho/Downloads/My-Bootstrap-Site-NAVBAR/images/apple-touch-icon-114x114.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="index.html">My Training Log</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="index.html">Sessions</a></li>
+		          <li><a href="#">Log</a></li>
+              <li><a href="#">Progression</a></li>
+              <li><a href="#">Target</a></li> 
+              <li><a href="#">Notifications</a></li>             
+		        </ul>
+                <a class="btn btn-primary pull-right" href="#">Logout</a>
+                <form class="navbar-search pull-right">
+  					<input type="text" class="search-query" placeholder="Search">
+				</form>
+                <!-- .nav collapse and Drop down on the left -->
+                <ul class="nav pull-right"> 
+                    <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" >Settings<b 			class="caret"> </b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Default View</a></li>
+                            <li><a href="#">Units</a></li>
+                            <li><a href="#">Week Structure</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                    
+                    
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="hero-unit">
+        <h1>Welcome to Your Home Page</h1>
+        <p>Here you can see your plan and milestones.</p>
+        <p>Enjoy!</p>
+      </div>
+  
+         <p></p>
+  
+      <div class="row">
+        <div class="span12">
+        <form action="" method="post" name="PlanSummary" id="PlanSummary">
+          <h3>Switch View</h3>
+          <select name="SwitchView" id="SwitchView">
+            <option>Day View</option>
+            <option value="#Sessions.html">Week View</option>
+            <option>Month View</option>
+          </select>
+          
+          <a class="btn  pull-right" href="#">Edit Plan</a>
+          <br></br>
+          
+        <!--    filtering
+
+<div id="ng-app" ng-app ng-controller="getMembers">
+              <div ng-repeat="member in members" ng-show="member.id=='1'">
+          {{member.email}}
+              </div>
+                        </div> -->
+            
+            <div id="ng-app" ng-app ng-controller="getMembers">
+        <table width="50%" class="table span5" border="1" cellpadding="0">
+              
+
+            <tr>
+                
+
+
+
+          <th scope="col"><h3>ID</h3></th>
+          <th scope="col"><h3>Full Name</h3></th>
+          <th scope="col"><h3>Email</h3></th>
+          <th scope="col"><h3>Done</h3></th>
+          </tr>
+          <tr>
+
+           <td><div ng-repeat="member in members">{{member.id}}</div></td>
+           <td><div ng-repeat="member in members">{{member.firstName}} {{member.surname}}</div></td>
+           <td><div ng-repeat="member in members">{{member.email}}</div></td>
+           <td><div ng-repeat="member in members"><input name="" type="checkbox" value="" ></div></td>
+          </tr>
+                  
+        </table>
+                        </div>
+
+           </form> 
+             <div ng-view></div>
+  
+  
+  
+  
+           
+         <div class="row">
+        <div class="span12">
+        <a class="btn btn-success" href="#addMemberModal" data-toggle="modal">Add Member</a>
+        </div>
+        </div>
+		
+        </div>
+      </div><!-- end row 1 -->
+
+      <hr>
+
+
+      <footer>
+        <p>AK Technologies - Staying ahead of the competition</p>
+      </footer>
+
+
+    </div> <!-- /container -->
+    
+            <!-- Add Target Modal -->
+      
+      <div class="modal hide" id="addMemberModal" aria-hidden="true">
+      
+      <div class="modal-header">
+       <h1>Add Member</h1>
+      </div>
+      
+<form action="/api/v1/member/create" method="get" class="ajaxform">
+              <div class="modal-body">
+          <h3>First Name</h3>
+          <input placeholder="First Name" type="text" name="fname" maxlength="60">
+          <h3>Surname</h3>
+          <input placeholder="Surname" type="text" name="surname" maxlength="60">
+          <h3>Username</h3>
+           <input placeholder="Username" type="text" name="uname" maxlength="60">
+          <h3>Email</h3>
+          <input placeholder="email" type="text" name="email" maxlength="100">
+              <h3>Password</h3>
+          <input placeholder="Password" type="password" name="password" maxlength="60">
+              
+			
+		  
+         </div>
+      
+      <div class="modal-footer">
+    <input class="btn btn-success" type="submit" value="Save" aria-hidden="true">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+          
+           </form>
+      
+      </div>
+      
+    <!--End of modal-->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    
+
+  </body>
+</html>

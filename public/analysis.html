@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Monte Carlo Simulation</title>
+        
+                <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+          <script src="js/script.js"></script>
+
+         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  
+    </head>
+ <body>
+     <h1>
+       <?php 
+$deck = array('2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', '10C', 'JC', 'QC', 'KC', 'AC', '2S',	'3S',	'4S',	'5S',	'6S',	'7S',	'8S',	'9S',	'10S', 'JS', 'QS', 'KS', 'AS', '2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', '10D', 'JD', 'QD', 'KD', 'AD', '2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', '10H', 'JH', 'QH', 'KH', 'AH');
+print_r($deck[mt_rand(0,51)]);
+
+            ?> 
+            </h1>
+    
+     <div class="container" style="padding:30px; border:1px;">
+         <form class="form-horizontal" name="dets">
+         <div class="control-group">
+        <label class="control-label" for="seedID">Seed</label>
+        <div class="controls">
+        <input type="text" class="input-small" id="seedID" name="seed" value="6234120"/>
+        </div>
+             </div>
+        <div class="control-group">
+        <label class="control-label" for="simID">Number of Simulations</label>
+        <div class="controls">
+        <select class="input-small" id="simID" name="noSims">
+  <option>1001</option>
+  <option>10001</option>
+  <option>100001</option>
+  <option>1000001</option>
+  <option>10000001</option>
+</select>             
+             </div>
+             </div>
+             </form>
+             <div class="form-actions">
+
+        <button class="btn btn-primary btn-med"	onclick="randGen(dets.noSims.value,dets.seed.value)"><span class="ladda-label">Generate Random Numbers</span></button>
+        <button class="btn btn-primary btn-med" onclick="calcPi(dets.noSims.value,dets.seed.value)"><span class="ladda-label">Calculate Pi</span></button>
+                 </div>
+              <script>
+//pbar(100);
+  </script>
+     <div class="form-actions" id="progressbar" style="padding:0px;"></div>
+        </div>
+
+     
+     <div class="container" style="padding:30px;" id="result"></div>
+
+
+
+        <script src="js/MersenneTwister.js"></script>
+
+        <script src="js/bootstrap.js"></script>
+        <script src="js/stopwatch.js"></script>
+      
+ 
+
+    </body>
+</html>
+
+        
